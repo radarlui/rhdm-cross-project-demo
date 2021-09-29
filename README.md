@@ -28,11 +28,16 @@ Then you can call the sub-project in the child-project from the parent-project u
 6. Import child-project with Repository URL at https://github.com/radarlui/child-project.git
 7. Build both projects in Decision Central
 8. Deploy both projects using KIE Server Swagger UI at http://localhost:8080/kie-server/docs or using CURL: 
+```
 curl -X PUT "http://localhost:8080/kie-server/services/rest/server/containers/parent-project_1.0.0-SNAPSHOT" -H "accept: application/json" -H "content-type: application/json" -d "{ \"container-id\" : \"parent-project_1.0.0-SNAPSHOT\", \"release-id\" : { \"group-id\" : \"com.demospace\", \"artifact-id\" : \"parent-project\", \"version\" : \"1.0.0-SNAPSHOT\" }}"
+```
+```
 curl -X PUT "http://localhost:8080/kie-server/services/rest/server/containers/child-project_1.0.0-SNAPSHOT" -H "accept: application/json" -H "content-type: application/json" -d "{ \"container-id\" : \"child-project_1.0.0-SNAPSHOT\", \"release-id\" : { \"group-id\" : \"com.demospace\", \"artifact-id\" : \"child-project\", \"version\" : \"1.0.0-SNAPSHOT\" }}"
+```
 ![image](https://user-images.githubusercontent.com/8802830/135237444-e88a2a98-bd25-431b-a467-0bc33a363b45.png)
 
 9. Execute the rule flow process by calling the API POST /server/containers/instances/{containerId} with containerId parent-project_1.0.0-SNAPSHOT and the following json body
+```
 {
   "lookup": "parent-project-sl-ksession",
   "commands": [
@@ -60,7 +65,7 @@ curl -X PUT "http://localhost:8080/kie-server/services/rest/server/containers/ch
     }
   ]
 }
-
+```
 ![image](https://user-images.githubusercontent.com/8802830/135241222-3bb9a4d7-8080-40f6-82f4-7a74c1a081e6.png)
 
 ![image](https://user-images.githubusercontent.com/8802830/135241277-f013a5b2-b1f7-41c9-9293-0c88491ad736.png)
