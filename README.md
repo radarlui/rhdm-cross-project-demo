@@ -4,7 +4,7 @@ When implementing a complicated rule flow based project using Red Hat Decision M
 - Long time to build the project
 - High resource (CPU, memory) consumptions
 
-In order to solve the above performance issues, it is recommened to reduce the number of rules in each project. Therefore breaking down a complicated project into multiple projects can improve the performance. However, there is no clear documents on how to call a sub-process in another project. This demo servers the purpose showing how to break down a long rule flow process into shorter ones in different and integrate them to work together.
+In order to solve the above performance issues, it is recommened to reduce the number of rules in each project. Therefore breaking down a complicated project into multiple projects can improve the performance. However, there is no clear documents on how to call a sub-process in another project. This demo serves the purpose showing how to break down a long rule flow process into shorter ones in different project and integrate them to work together.
 
 In this demo, there are two projects. One is parent-project and the other is child-project. In order for the rule flow process in parent-project to call the sub-process in child-project, the following settings have to be configured in the project settings of parent-project.
 
